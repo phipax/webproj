@@ -11,7 +11,6 @@ get '/secret' do
 end
 
 get '/dog' do
-  "<div style='border: 3px dashed red'>
-   <img src='http://www.rantpets.com/wp-content/uploads/2015/03/Screen-shot-2015-03-25-at-1.58.21-PM.png'>
-  </div>"
+  @name = ["Amigo","Oscar","Viking"].sample
+  erb(:index)
 end
