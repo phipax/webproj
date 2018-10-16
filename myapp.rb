@@ -1,16 +1,16 @@
 require 'sinatra'
 
-set :session_secret, 'agaramudhala'
+# get '/random-dog' do
+#   @name = ["Amigo","Oscar","Viking"].sample
+#   erb(:index)
+# end
 
-get '/' do
-  'hello world!'
+get '/dog-form' do
+  erb :dog_form
 end
 
-get '/secret' do
-  'Message from god'
-end
-
-get '/dog' do
-  @name = ["Amigo","Oscar","Viking"].sample
+post '/named-dog' do
+  p params
+  @name = params[:name]
   erb(:index)
 end
